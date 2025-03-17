@@ -92,6 +92,108 @@ df.drop(columns=["Hour"], inplace=True)
 
 ![Credit Card Fraud Detection](./images/Transaction_Count_by_Hour.png)
 
+5- > **Examining the distribution of the target variable to understand class imbalance**:
+>> - Next step snippet calculates and displays the count of each unique value in the 'Class' column of the DataFrame df. The 'Class' column represents the target variable, where 0 indicates a non-fraudulent transaction and 1 indicates a fraudulent transaction.
+>> -
+
+```python
+df["Class"].value_counts()
+
+#output
+# 0    283253
+1       473
+Name: Class, dtype: int64
+```
+
+>> - The output shows that there are 283,253 non-fraudulent transactions and 473 fraudulent transactions in the dataset. This immediately highlights the significant class imbalance, where the majority of transactions are non-fraudulent.
+
+```python
+print('Not Fraud', round(df['Class'].value_counts()[0]/len(df) * 100,2))
+print('Fraud', round(df['Class'].value_counts()[1]/len(df) * 100,2))
+
+#output
+
+# Not Fraud 99.83
+Fraud 0.17
+```
+>> - The output confirms that 99.83% of the transactions are non-fraudulent, while only 0.17% are fraudulent, reinforcing the severe class imbalance.
+
+```python
+sns.countplot('Class', data=df, palette=["red","blue"])
+plt.title('Class Distributions \n (0: Not Fraud || 1: Fraud)', fontsize=12, color="Blue")
+```
+>> - This part of the code generates a count plot using seaborn to visually represent the distribution of the 'Class' variable.
+sns.countplot('Class', data=df, palette=["red","blue"]) creates the count plot, with red representing non-fraudulent transactions (0) and blue representing fraudulent transactions (1).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
