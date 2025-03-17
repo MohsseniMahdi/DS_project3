@@ -49,7 +49,8 @@ After loading and initially inspecting the data, it's crucial to check for missi
 duplicate_rows = df.duplicated().sum()
 print(f"Number of duplicate rows: {duplicate_rows}")
 
->>> Number of duplicate rows: 1081
+#output
+# Number of duplicate rows: 1081
 ```
 
 >> - The output Number of duplicate rows: 1081 indicates that the original DataFrame contained 1081 duplicate rows. These duplicates can introduce bias and redundancy into the dataset, potentially affecting the performance of subsequent analysis and modeling.
@@ -60,7 +61,8 @@ print(f"Number of duplicate rows: {duplicate_rows}")
 df = df.drop_duplicates().reset_index(drop=True)
 print(f"Number of duplicate rows: {duplicate_rows}")
 
->>> Number of duplicate rows: 0
+#output
+# Number of duplicate rows: 0
 ```
 >> - The subsequent output Number of duplicate rows: 0 confirms that the duplicate rows have been successfully removed, leaving a clean dataset for further preprocessing and analysis. The fact that the first print statement saved the initial number of duplicates and the second print showed 0, validates the success of the removal.
 
@@ -101,8 +103,8 @@ df["Class"].value_counts()
 
 #output
 # 0    283253
-1       473
-Name: Class, dtype: int64
+#1       473
+#Name: Class, dtype: int64
 ```
 
 >> - The output shows that there are 283,253 non-fraudulent transactions and 473 fraudulent transactions in the dataset. This immediately highlights the significant class imbalance, where the majority of transactions are non-fraudulent.
@@ -114,7 +116,7 @@ print('Fraud', round(df['Class'].value_counts()[1]/len(df) * 100,2))
 #output
 
 # Not Fraud 99.83
-Fraud 0.17
+#Fraud 0.17
 ```
 >> - The output confirms that 99.83% of the transactions are non-fraudulent, while only 0.17% are fraudulent, reinforcing the severe class imbalance.
 
@@ -125,7 +127,7 @@ plt.title('Class Distributions \n (0: Not Fraud || 1: Fraud)', fontsize=12, colo
 >> - This part of the code generates a count plot using seaborn to visually represent the distribution of the 'Class' variable.
 sns.countplot('Class', data=df, palette=["red","blue"]) creates the count plot, with red representing non-fraudulent transactions (0) and blue representing fraudulent transactions (1).
 
-
+![Credit Card Fraud Detection](./images/Class_Distributions.png)
 
 
 
