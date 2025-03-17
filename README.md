@@ -24,8 +24,10 @@ The dataset was loaded using Pandas:
 
 - 1. import pandas as pd
 
+```python
 data1 = pd.read_csv('../raw_data/creditcard.csv')
 df = data1.copy()
+
 
 
 
